@@ -188,13 +188,12 @@ void loop() {
 
   else if (isCountingDown) {
 
-      delay(60); 
+      delay(0); 
       csecondsLeft -= decrement;
 
-      if (csecondsLeft < 10) {
+      if (csecondsLeft < 0) {
         csecondsLeft = 0;
         if (!explosed) {
-          tone(playSound, 1000, 50);
           digitalWrite(13, HIGH);
           digitalWrite(A1, HIGH);
           digitalWrite(A2, HIGH);
