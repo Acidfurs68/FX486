@@ -184,7 +184,7 @@ void loop() {
 
   else if (isCountingDown) {
 
-      delay(60); 
+      delay(0); 
       csecondsLeft -= decrement;
 
       if (csecondsLeft < 0) {
