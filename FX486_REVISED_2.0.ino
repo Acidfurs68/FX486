@@ -51,7 +51,7 @@ void setup() {
   lc.setIntensity(0, 10);
   lc.clearDisplay(0); 
 
-  //Initialiser ici les actions sur sortie M12
+  //Initialiser ici la logique pour gérer les actions sur sortie M12
   
   pinMode(13, OUTPUT);   
   pinMode(A1, OUTPUT);   
