@@ -42,11 +42,9 @@ Avant de commencer, assurez-vous d'avoir installé l'environnement de développe
 
 ### Programmation de la durée
 
-1. Connectez le clavier matriciel à la carte Arduino.
+1. Un appuie sur la touche "A" permet d'entrer en mode de programmation. Vous pouvez commencer à entrer la durée du compte à rebours.
 
-2. Un appuie sur la touche "A" permet d'entrer en mode de programmation. Vous pouvez commencer à entrer la durée du compte à rebours.
-
-3. Utilisez les touches numériques (0-9) du clavier matriciel pour entrer la durée du compte à rebours au format "HHMMSScc", où HH représente les heures, MM les minutes, SS les secondes et cc les centièmes de seconde.
+2. Utilisez les touches numériques (0-9) du clavier matriciel pour entrer la durée du compte à rebours au format "HHMMSScc", où HH représente les heures, MM les minutes, SS les secondes et cc les centièmes de seconde.
 
 ### Démarrer le compte à rebours
 
