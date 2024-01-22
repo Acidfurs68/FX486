@@ -1,6 +1,5 @@
 #include <Keypad.h>
 #include <LedControl.h>
-#include <SPI.h>
 
 const byte ROWS = 4; 
 const byte COLS = 4; 
