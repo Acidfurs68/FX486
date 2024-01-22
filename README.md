@@ -42,15 +42,15 @@ Avant de commencer, assurez-vous d'avoir installé l'environnement de développe
 
 ### Programmation de la durée
 
-1. Un appuie sur la touche "A" permet d'entrer en mode de programmation. Vous pouvez commencer à entrer la durée du compte à rebours.
+- Un appuie sur la touche "A" permet d'entrer en mode de programmation. Vous pouvez commencer à entrer la durée du compte à rebours.
 
-2. Utilisez les touches numériques (0-9) du clavier matriciel pour entrer la durée du compte à rebours au format "HHMMSScc", où HH représente les heures, MM les minutes, SS les secondes et cc les centièmes de seconde.
+- Utilisez les touches numériques (0-9) du clavier matriciel pour entrer la durée du compte à rebours au format "HHMMSScc", où HH représente les heures, MM les minutes, SS les secondes et cc les centièmes de seconde.
 
 ### Démarrer le compte à rebours
 
-1. Appuyez sur la touche "D" pour démarrer le compte à rebours. L'afficheur affichera la durée restante.
+- Appuyez sur la touche "D" pour démarrer le compte à rebours. L'afficheur affichera la durée restante.
 
-2. Le minuteur émettra un bip sonore à chaque seconde de décompte.
+- Le minuteur émettra un bip sonore à chaque seconde de décompte.
 
 ### Arrêter ou relancer le compte à rebours
 
