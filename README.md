@@ -11,7 +11,7 @@ Le minuteur affiche ensuite le temps restant sur un afficheur 8 chiffres à LED 
 - Programmation facile du temps de compte à rebours.
 - Affichage du temps restant sur un afficheur 8 chiffres à LED.
 - Bips sonores à chaque seconde de décompte.
-- Possibilité d'arrêter le compte à rebours ou de le désamorcer si nécessaire.
+- Possibilité d'arrêter le compte à rebours en marche.
 
 ## Matériel Requis
 
