@@ -19,7 +19,6 @@ LedControl lc = LedControl(10, 11, 12, 1);
 
 unsigned long previousMillisCountdown = 0;  
 unsigned long previousSecond = 0;      
-const long countdownInterval = 1;
 
 long csecondsLeft;
 int decrement = 1;
