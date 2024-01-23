@@ -60,7 +60,7 @@ Avant de commencer, assurez-vous d'avoir installé l'environnement de développe
 
 ### Réinitialiser et reprogrammer
 
-- En mode programmation, pour effacer la durée programmée et recommencer, appuyez sur la touche "C", et vous pourrez recommencer le processus de programmation.
+- En mode programmation, pour effacer la durée programmée et recommencer, appuyez sur la touche "C", et vous pourrez recommencer le processus de programmation en appuyant sur la touche "A".
 
 ## Contributions
 
