@@ -31,4 +31,4 @@ Actuellement, en raison du statut de brevet provisoire de ce projet, nous ne pou
 Pour toute question concernant les licences ou les partenariats, veuillez contacter foxtek@gmx.com.
 
 ## Contact
-Pour plus d'informations, veuillez contacter Foxtek Technology Systems à foxtek@gmx.com ou visitez notre site web foxtek.eu.
+Pour plus d'informations, veuillez contacter Foxtek Technology Systems à foxtek@gmx.com ou visitez notre site web www.foxtek.eu.
