@@ -4,7 +4,7 @@ LedControl lc = LedControl(10, 11, 12, 1);
 
 int resetPin = A2;
 int buzzerPin = A0;
-int ledPin = 13;  // Remplacez par le numéro de broche approprié pour votre LED
+int ledPin = 13; 
 unsigned long previousMillis = 0;
 unsigned long currentMillis = 0;
 unsigned long elapsedTime = 0;
