@@ -1,4 +1,4 @@
-# FlexiTimer
+# FlexiTimer FX486
 
 ## À propos du FlexiTimer
 Le FlexiTimer est un minuteur programmable innovant, conçu et développé par Foxtek Technology Systems. 
