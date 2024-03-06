@@ -1,6 +1,8 @@
 #include <LedControl.h>
 
 LedControl lc = LedControl(10, 11, 12, 1);
+const int ledPin = 13;    // Broche pour la LED
+const int buzzerPin = A0; // Broche pour le buzzer
 
 int resetPin = A2;
 unsigned long previousMillis = 0;
@@ -15,6 +17,7 @@ void setup() {
   displayTime(0, 0, 0, 0);
 
   pinMode(resetPin, INPUT_PULLUP);
+  pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
@@ -26,10 +29,9 @@ void loop() {
     while (digitalRead(resetPin) == LOW); // Attente active jusqu'à ce que le bouton soit relâché
 
     if (timingStarted) {
-      timingStarted = false; // Mettre en pause le chronomètre
+      pauseTimer(); // Mettre en pause le chronomètre
     } else {
-      previousMillis = currentMillis - elapsedTime; // Redémarrer le chronomètre à partir du temps actuel
-      timingStarted = true; // Démarrer le chronomètre
+      startTimer(); // Démarrer le chronomètre
     }
   }
 
@@ -41,6 +43,7 @@ void loop() {
     int milliseconds = elapsedTime % 1000 / 10;
 
     displayTime(hours, minutes, seconds, milliseconds);
+
   }
 }
 
@@ -53,4 +56,31 @@ void displayTime(int hours, int minutes, int seconds, int milliseconds) {
   lc.setDigit(0, 2, seconds % 10, true);       // Seconde
   lc.setDigit(0, 1, (milliseconds / 10) % 10, false);// Dixième de milliseconde
   lc.setDigit(0, 0, milliseconds % 10, false); // Milliseconde
+}
+
+void pauseTimer() {
+  // Clignoter et biper une fois
+  for (int i = 0; i < 1; i++) {
+    tone(buzzerPin, 1000, 100);
+    digitalWrite(ledPin, HIGH);
+    delay(100);
+    digitalWrite(ledPin, LOW);
+    delay(100);
+  }
+  noTone(buzzerPin);
+  timingStarted = false; // Mettre en pause le chronomètre
+}
+
+void startTimer() {
+  // Clignoter et biper deux fois
+  for (int i = 0; i < 2; i++) {
+    tone(buzzerPin, 1000, 100);
+    digitalWrite(ledPin, HIGH);
+    delay(100);
+    digitalWrite(ledPin, LOW);
+    delay(100);
+  }
+  noTone(buzzerPin);
+  timingStarted = true; // Démarrer le chronomètre
+  previousMillis = currentMillis - elapsedTime; // Redémarrer le chronomètre à partir du temps actuel
 }
