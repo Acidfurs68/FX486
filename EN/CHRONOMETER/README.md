@@ -1,61 +1,61 @@
-# Chronomètre Arduino
+# Arduino Stopwatch
 
-Ce projet consiste en un chronomètre simple implémenté sur une carte Arduino, avec un affichage sur un module d'affichage LED à sept segments et des fonctionnalités supplémentaires telles que la mise en pause, la réinitialisation et des indicateurs visuels et sonores.
+This project involves a simple stopwatch implemented on an Arduino board, featuring a display on a seven-segment LED module and additional functionalities such as pause, reset, and visual/auditory indicators.
 
-## Matériel requis
+## Required Hardware
 
-- Arduino (testé sur Arduino Nano Every)
-- Module d'affichage LED à sept segments (utilisation de la bibliothèque LedControl)
+- Arduino (tested on Arduino Nano Every)
+- Seven-segment LED display module (using the LedControl library)
 - Buzzer
-- LED (Connectée à la broche 13 sur Arduino Nano Every)
-- Bouton de reset (Connecté à la broche A2 sur Arduino Nano Every)
+- LED (Connected to pin 13 on Arduino Nano Every)
+- Reset button (Connected to pin A2 on Arduino Nano Every)
 
-## Bibliothèques nécessaires
+## Required Libraries
 
-- [LedControl](https://github.com/wayoda/LedControl) - Pour le contrôle du module d'affichage LED.
+- [LedControl](https://github.com/wayoda/LedControl) - For controlling the LED display module.
 
-## Schéma de câblage
+## Wiring Diagram
 
-Assurez-vous de connecter les composants conformément au schéma suivant :
+Make sure to connect the components according to the following diagram:
 
-- Module d'affichage LED :
-  - DIN à la broche 10 de l'Arduino
-  - CS à la broche 11 de l'Arduino
-  - CLK à la broche 12 de l'Arduino
-  - Alimentation et masse selon les spécifications du module
+- LED display module:
+  - DIN to pin 10 on the Arduino
+  - CS to pin 11 on the Arduino
+  - CLK to pin 12 on the Arduino
+  - Power and ground as per the module specifications
 
-- Buzzer :
-  - Connecté à la broche A0 de l'Arduino
+- Buzzer:
+  - Connected to pin A0 on the Arduino
 
-- LED :
-  - Connectée à la broche 13 de l'Arduino
+- LED:
+  - Connected to pin 13 on the Arduino
 
-- Bouton de reset :
-  - Connecté à la broche A2 de l'Arduino
+- Reset button:
+  - Connected to pin A2 on the Arduino
 
-## Fonctionnalités
+## Features
 
-1. **RESET_CHRONO.ino :** Ce fichier contient le code pour réinitialiser le chronomètre. Cela déclenchera un bip et un clignotement de la LED.
+1. **RESET_CHRONO.ino:** This file contains the code to reset the stopwatch. This will trigger a beep and LED blinking.
 
-2. **START_STOP_CHRONO.ino :** Ce fichier contient le code pour démarrer et arrêter le chronomètre. Lorsque vous chargez ce code sur votre Arduino, cela permettra de démarrer et d'arrêter le chronomètre en appuyant sur le bouton de reset. Cela déclenchera également des bips et des clignotements appropriés en fonction de l'état du chronomètre.
+2. **START_STOP_CHRONO.ino:** This file contains the code to start and stop the stopwatch. When you upload this code to your Arduino, it will enable you to start and stop the stopwatch by pressing the reset button. It will also trigger appropriate beeps and LED blinking based on the stopwatch's state.
 
-3. **STOP_RESET_CHRONO.ino :** Ce fichier contient le code pour mettre en pause le chronomètre et le redémarrer. Lorsque vous chargez ce code sur votre Arduino, cela permettra de mettre en pause le chronomètre en appuyant sur le bouton de reset, puis de le redémarrer en appuyant à nouveau sur le même bouton. Cela déclenchera également des bips et des clignotements appropriés en fonction de l'état du chronomètre.
+3. **STOP_RESET_CHRONO.ino:** This file contains the code to pause the stopwatch and restart it. When you upload this code to your Arduino, it will allow you to pause the stopwatch by pressing the reset button and then restart it by pressing the same button again. It will also trigger appropriate beeps and LED blinking based on the stopwatch's state.
 
-## Instructions d'utilisation
+## Usage Instructions
 
-1. Téléchargez et installez les bibliothèques nécessaires (LedControl).
+1. Download and install the required libraries (LedControl).
 
-2. Connectez les composants conformément au schéma de câblage.
+2. Connect the components according to the wiring diagram.
 
-3. Chargez le code approprié sur votre Arduino à l'aide de l'IDE Arduino.
+3. Upload the appropriate code to your Arduino using the Arduino IDE.
 
-4. Alimentez votre Arduino.
+4. Power your Arduino.
 
-5. Utilisez les boutons de reset pour contrôler les fonctionnalités du chronomètre selon le fichier INO chargé.
+5. Use the reset buttons to control the stopwatch's functionalities based on the loaded INO file.
 
-## Auteurs
+## Authors
 
 - Joemy Bannwarth
 - Foxtek Technology Systems - www.foxtek.eu
 
-N'hésitez pas à contribuer ou à signaler des problèmes !
+Feel free to contribute or report issues!
