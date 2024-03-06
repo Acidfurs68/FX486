@@ -1,71 +1,66 @@
-# Minuteur à Compte à Rebours Programmable Arduino
+Programmable Arduino Countdown Timer
 
-![7be9ab2a-c982-4633-9d86-b7a25706d5da](https://github.com/Acidfurs68/FX486_V1/assets/153730800/561f6355-0b7a-4577-b27d-d51a5cb9047f)
+This project involves a programmable countdown timer based on the Arduino platform.
+It allows users to set a countdown duration in hours, minutes, seconds, and hundredths of a second and then start the countdown.
+The timer then displays the remaining time on an 8-digit LED display and emits a beep every second during the countdown.
+Features
 
-Ce projet consiste en un minuteur à compte à rebours programmable basé sur la plateforme Arduino. 
-Il permet aux utilisateurs de définir une durée de compte à rebours en heures, minutes, secondes et centièmes de seconde, puis de lancer le compte à rebours. 
-Le minuteur affiche ensuite le temps restant sur un afficheur 8 chiffres à LED et émet un bip à chaque seconde de décompte.
+    Easy programming of the countdown time.
+    Display of remaining time on an 8-digit LED display.
+    Audible beeps every second during the countdown.
+    Ability to stop and restart the running countdown.
 
-## Fonctionnalités
+Required Hardware
 
-- Programmation facile du temps de compte à rebours.
-- Affichage du temps restant sur un afficheur 8 chiffres à LED.
-- Bips sonores à chaque seconde de décompte.
-- Possibilité d'arrêter et relancer le compte à rebours en marche.
+    Arduino (e.g., Arduino Nano)
+    MAX7219-compatible 8-digit LED display
+    4x4 matrix keypad
+    Speaker or buzzer
+    Basic electronic components (resistors, wires, etc.)
 
-## Matériel Requis
+Prerequisites
 
-- Arduino (par exemple, Arduino Nano)
-- Afficheur 8 chiffres à LED compatible MAX7219
-- Clavier matriciel 4x4
-- Haut-parleur ou buzzer
-- Composants électroniques de base (résistances, fils, etc.)
+Before getting started, ensure you have installed the Arduino development environment on your computer. You will also need the following libraries:
 
-## Prérequis
+    Keypad Library: https://github.com/Chris--A/Keypad
+    LedControl Library: https://github.com/wayoda/LedControl
 
-Avant de commencer, assurez-vous d'avoir installé l'environnement de développement Arduino sur votre ordinateur. Vous aurez également besoin des bibliothèques suivantes :
+Installation
 
-- Bibliothèque Keypad : [https://github.com/Chris--A/Keypad](https://github.com/Chris--A/Keypad)
-- Bibliothèque LedControl : [https://github.com/wayoda/LedControl](https://github.com/wayoda/LedControl)
+    Make sure you have the Arduino development environment installed on your computer.
 
-## Installation
+    Install the necessary libraries: Keypad and LedControl. You can find them in the provided source code links.
 
-1. Assurez-vous d'avoir l'environnement de développement Arduino installé sur votre ordinateur.
+    Connect your Arduino board to the components according to the wiring diagram provided in the documentation.
 
-2. Installez les bibliothèques nécessaires : `Keypad` et `LedControl`. Vous pouvez les trouver dans les liens fournis dans le code source.
+    Load the code into the Arduino IDE and upload it to your Arduino board.
 
-3. Connectez votre carte Arduino aux composants conformément au schéma de câblage fourni dans la documentation.
+Usage
+Programming the Duration
 
-4. Chargez le code dans l'Arduino IDE et téléversez-le sur votre carte Arduino.
+    Press the "A" key to enter programming mode. You can start entering the countdown duration.
 
-## Utilisation
+    Use the numerical keys (0-9) on the matrix keypad to enter the countdown duration in the format "HHMMSScc," where HH represents hours, MM represents minutes, SS represents seconds, and cc represents hundredths of a second.
 
-### Programmation de la durée
+Starting the Countdown
 
-- Un appuie sur la touche "A" permet d'entrer en mode de programmation. Vous pouvez commencer à entrer la durée du compte à rebours.
+    Press the "D" key to start the countdown. The display will show the remaining duration.
 
-- Utilisez les touches numériques (0-9) du clavier matriciel pour entrer la durée du compte à rebours au format "HHMMSScc", où HH représente les heures, MM les minutes, SS les secondes et cc les centièmes de seconde.
+    The timer will emit a beep every second during the countdown.
 
-### Démarrer le compte à rebours
+Stopping or Restarting the Countdown
 
-- Appuyez sur la touche "D" pour démarrer le compte à rebours. L'afficheur affichera la durée restante.
+    Press the "B" key to stop the ongoing countdown. The timer will stop, but the programmed duration will remain displayed.
 
-- Le minuteur émettra un bip sonore à chaque seconde de décompte.
+    Press the "D" key to restart the ongoing countdown.
 
-### Arrêter ou relancer le compte à rebours
+Resetting and Reprogramming
 
-- Appuyez sur la touche "B" pour arrêter le compte à rebours en cours. Le minuteur s'arrêtera, mais la durée programmée restera affichée.
+    In programming mode, to clear the programmed duration and start over, press the "C" key, and you can begin the programming process again by pressing the "A" key.
 
-- Appuyez sur la touche "D" pour relancer le compte à rebours en cours. 
+Contributions
 
-### Réinitialiser et reprogrammer
+If you want to contribute to this project, follow the contribution steps mentioned in the README. Make sure to adhere to coding standards and contribution guidelines.
+License
 
-- En mode programmation, pour effacer la durée programmée et recommencer, appuyez sur la touche "C", et vous pourrez recommencer le processus de programmation en appuyant sur la touche "A".
-
-## Contributions
-
-Si vous souhaitez contribuer à ce projet, suivez les étapes de contribution mentionnées dans le README. Assurez-vous de respecter les normes de codage et les directives de contribution.
-
-## Licence
-
-Ce projet est sous licence XYZ. Pour plus de détails, consultez le fichier `LICENSE.md`.
+This project is under the XYZ license. For more details, refer to the LICENSE.md file.
