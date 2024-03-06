@@ -56,6 +56,6 @@ Assurez-vous de connecter les composants conformément au schéma suivant :
 ## Auteurs
 
 - Joemy Bannwarth
-- Foxtek Technology Systems
+- Foxtek Technology Systems - www.foxtek.eu
 
 N'hésitez pas à contribuer ou à signaler des problèmes !
