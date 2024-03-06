@@ -1,14 +1,16 @@
 #include <LedControl.h>
 
 LedControl lc = LedControl(10, 11, 12, 1);
-const int ledPin = 13;    // Broche pour la LED
-const int buzzerPin = A0; // Broche pour le buzzer
 
 int resetPin = A2;
+int buzzerPin = A0;
+int ledPin = 13;
 unsigned long previousMillis = 0;
 unsigned long currentMillis = 0;
 unsigned long elapsedTime = 0;
 bool timingStarted = false;
+bool buttonState = HIGH;
+unsigned long debounceDelay = 20;
 
 void setup() {
   lc.shutdown(0, false);
@@ -17,22 +19,22 @@ void setup() {
   displayTime(0, 0, 0, 0);
 
   pinMode(resetPin, INPUT_PULLUP);
+  pinMode(buzzerPin, OUTPUT);
   pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
   currentMillis = millis();
 
-  if (digitalRead(resetPin) == LOW) {
-    // Attendre que le bouton soit relâché pour éviter les rebonds
+  if (digitalRead(resetPin) == LOW && buttonState == HIGH && (currentMillis - previousMillis) > debounceDelay) {
+    // Wait for the button to be released to avoid bouncing
     delay(50);
-    while (digitalRead(resetPin) == LOW); // Attente active jusqu'à ce que le bouton soit relâché
+    while (digitalRead(resetPin) == LOW); // Active waiting until the button is released
 
-    if (timingStarted) {
-      pauseTimer(); // Mettre en pause le chronomètre
-    } else {
-      startTimer(); // Démarrer le chronomètre
-    }
+    previousMillis = currentMillis; // Reset the timer
+    timingStarted = true; // Start the timer
+    // Produce a beep sound and blink the LED twice
+    beepAndBlink();
   }
 
   if (timingStarted) {
@@ -43,44 +45,27 @@ void loop() {
     int milliseconds = elapsedTime % 1000 / 10;
 
     displayTime(hours, minutes, seconds, milliseconds);
-
   }
 }
 
 void displayTime(int hours, int minutes, int seconds, int milliseconds) {
-  lc.setDigit(0, 7, (hours / 10) % 10, false); // Dixième d'heure
-  lc.setDigit(0, 6, hours % 10, true);         // Heure
-  lc.setDigit(0, 5, (minutes / 10) % 10, false);// Dixième de minute
+  lc.setDigit(0, 7, (hours / 10) % 10, false); // Tenth of an hour
+  lc.setDigit(0, 6, hours % 10, true);         // Hour
+  lc.setDigit(0, 5, (minutes / 10) % 10, false);// Tenth of a minute
   lc.setDigit(0, 4, minutes % 10, true);        // Minute
-  lc.setDigit(0, 3, (seconds / 10) % 10, false);// Dixième de seconde
-  lc.setDigit(0, 2, seconds % 10, true);       // Seconde
-  lc.setDigit(0, 1, (milliseconds / 10) % 10, false);// Dixième de milliseconde
-  lc.setDigit(0, 0, milliseconds % 10, false); // Milliseconde
+  lc.setDigit(0, 3, (seconds / 10) % 10, false);// Tenth of a second
+  lc.setDigit(0, 2, seconds % 10, true);       // Second
+  lc.setDigit(0, 1, (milliseconds / 10) % 10, false);// Tenth of a millisecond
+  lc.setDigit(0, 0, milliseconds % 10, false); // Millisecond
 }
 
-void pauseTimer() {
-  // Clignoter et biper 2 fois
-  for (int i = 0; i < 2; i++) {
-    tone(buzzerPin, 1000, 100);
-    digitalWrite(ledPin, HIGH);
-    delay(100);
-    digitalWrite(ledPin, LOW);
-    delay(100);
+void beepAndBlink() {
+  for (int i = 0; i < 2; ++i) {
+    analogWrite(buzzerPin, 128);  // Use PWM value to produce sound
+    digitalWrite(ledPin, HIGH);  // Turn on the LED
+    delay(100);  // Maintain sound and on state for 100 ms
+    analogWrite(buzzerPin, 0);    // Stop the sound
+    digitalWrite(ledPin, LOW);   // Turn off the LED
+    delay(100);  // Maintain off state for 100 ms
   }
-  noTone(buzzerPin);
-  timingStarted = false; // Mettre en pause le chronomètre
-}
-
-void startTimer() {
-  // Clignoter et biper 1 fois
-  for (int i = 0; i < 1; i++) {
-    tone(buzzerPin, 1000, 100);
-    digitalWrite(ledPin, HIGH);
-    delay(100);
-    digitalWrite(ledPin, LOW);
-    delay(100);
-  }
-  noTone(buzzerPin);
-  timingStarted = true; // Démarrer le chronomètre
-  previousMillis = currentMillis - elapsedTime; // Redémarrer le chronomètre à partir du temps actuel
 }
