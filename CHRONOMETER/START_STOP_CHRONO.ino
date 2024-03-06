@@ -61,7 +61,7 @@ void displayTime(int hours, int minutes, int seconds, int milliseconds) {
 void pauseTimer() {
   // Clignoter et biper 2 fois
   for (int i = 0; i < 2; i++) {
-    //tone(buzzerPin, 1000, 100);
+    tone(buzzerPin, 1000, 100);
     digitalWrite(ledPin, HIGH);
     delay(100);
     digitalWrite(ledPin, LOW);
@@ -74,7 +74,7 @@ void pauseTimer() {
 void startTimer() {
   // Clignoter et biper 1 fois
   for (int i = 0; i < 1; i++) {
-    //tone(buzzerPin, 1000, 100);
+    tone(buzzerPin, 1000, 100);
     digitalWrite(ledPin, HIGH);
     delay(100);
     digitalWrite(ledPin, LOW);
