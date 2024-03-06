@@ -50,7 +50,7 @@ void setup() {
   lc.setIntensity(0, 10);
   lc.clearDisplay(0); 
 
-  //Initialiser ici la logique pour gérer les actions sur sortie M12
+  // Initialize here the logic to manage actions on output M12
   
   pinMode(13, OUTPUT);   
   pinMode(A1, OUTPUT);   
@@ -235,7 +235,7 @@ void handleCountdown() {
         if (!explosed) {
           Serial.print("! DETONATING !");
           
-          //Inserer ici la logique pour gérer les actions sur sortie M12
+          // Insert here the logic to manage actions on output M12.
 
           digitalWrite(13, HIGH); 
           digitalWrite(A1, HIGH); 
