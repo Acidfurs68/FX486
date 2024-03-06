@@ -1,75 +1,72 @@
-# Affichage d'Horloge avec MAX7219 et DS3231
+# Clock Display with MAX7219 and DS3231
 
-Ce projet Arduino utilise un afficheur à sept segments MAX7219 pour afficher l'heure récupérée à partir d'un module horloge en temps réel DS3231. L'horloge est mise à jour chaque seconde et affiche les heures, les minutes et les secondes.
+This Arduino project utilizes a MAX7219 seven-segment display to showcase the time retrieved from a DS3231 real-time clock module. The clock updates every second, displaying hours, minutes, and seconds.
 
-## Matériel requis
+## Required Hardware
 
-- Arduino (testé sur Arduino Nano Every)
-- Module MAX7219 (afficheur à sept segments)
-- Module RTC DS3231 (horloge en temps réel)
-- Fils de connexion
+- Arduino (tested on Arduino Nano Every)
+- MAX7219 Module (seven-segment display)
+- DS3231 RTC Module (real-time clock)
+- Connecting wires
 
-## Bibliothèques nécessaires
+## Required Libraries
 
-- [LedControl](https://github.com/wayoda/LedControl) - Pour le contrôle du module MAX7219.
-- [Wire](https://www.arduino.cc/en/reference/wire) - Pour la communication I2C avec le module DS3231.
-- [RTClib](https://github.com/adafruit/RTClib) - Pour la manipulation du module RTC DS3231.
+- [LedControl](https://github.com/wayoda/LedControl) - For controlling the MAX7219 module.
+- [Wire](https://www.arduino.cc/en/reference/wire) - For I2C communication with the DS3231 module.
+- [RTClib](https://github.com/adafruit/RTClib) - For manipulating the DS3231 RTC module.
 
-## Schéma de câblage
+## Wiring Diagram
 
-Connectez les composants conformément au schéma suivant :
+Connect the components according to the following diagram:
 
-- Module MAX7219 :
-  - DIN à la broche 10 de l'Arduino
-  - CS à la broche 11 de l'Arduino
-  - CLK à la broche 12 de l'Arduino
-  - Alimentation et masse selon les spécifications du module
+- MAX7219 Module:
+  - DIN to pin 10 on the Arduino
+  - CS to pin 11 on the Arduino
+  - CLK to pin 12 on the Arduino
+  - Power and ground as per the module specifications
 
-- Module RTC DS3231 :
-  - Connecté via le bus I2C (SDA et SCL sur Arduino Nano Every)
+- DS3231 RTC Module:
+  - Connected via the I2C bus (SDA and SCL on Arduino Nano Every)
 
-## Fonctionnalités
+## Features
 
-- Affiche l'heure actuelle en utilisant un afficheur à sept segments.
-- Utilise un module RTC DS3231 pour obtenir l'heure en temps réel.
-- Met à jour l'affichage toutes les secondes.
+- Displays the current time using a seven-segment display.
+- Utilizes a DS3231 RTC module to obtain real-time hours, minutes, and seconds.
+- Updates the display every second.
 
-## Instructions d'utilisation
+## Usage Instructions
 
-1. **Téléchargez et installez les bibliothèques nécessaires** :
-   - Téléchargez et installez la bibliothèque LedControl pour le contrôle du module MAX7219.
-   - Assurez-vous d'avoir la bibliothèque Wire installée pour la communication I2C avec le module DS3231.
-   - Installez également la bibliothèque RTClib pour la manipulation du module RTC DS3231.
+1. **Download and install the necessary libraries**:
+   - Download and install the LedControl library for controlling the MAX7219 module.
+   - Ensure the Wire library is installed for I2C communication with the DS3231 module.
+   - Also, install the RTClib library for manipulating the DS3231 RTC module.
 
-2. **Connectez les composants conformément au schéma de câblage** :
-   - Connectez les broches DIN, CS et CLK du module MAX7219 aux broches 10, 11 et 12 de l'Arduino respectivement.
-   - Assurez-vous de connecter le module RTC DS3231 au bus I2C de l'Arduino (broches SDA et SCL sur Arduino Nano Every).
+2. **Connect the components according to the wiring diagram**:
+   - Connect the DIN, CS, and CLK pins of the MAX7219 module to pins 10, 11, and 12 on the Arduino, respectively.
+   - Ensure you connect the DS3231 module to the I2C bus of the Arduino (SDA and SCL on Arduino Nano Every).
 
-3. **Chargez le code sur votre Arduino** :
-   - Ouvrez le fichier .ino correspondant dans l'IDE Arduino.
-   - Vérifiez que vous avez sélectionné le bon type de carte et le bon port série dans l'IDE Arduino.
-   - Téléversez le code sur votre Arduino.
+3. **Upload the code to your Arduino**:
+   - Open the corresponding .ino file in the Arduino IDE.
+   - Verify that you have selected the correct board type and serial port in the Arduino IDE.
+   - Upload the code to your Arduino.
 
-4. **Conservez la date et l'heure dans le module DS3231** :
-   - La première fois que vous chargez le code sur votre Arduino, il est recommandé d'activer la ligne de code `rtc.adjust(DateTime(année, mois, jour, heure, minute, seconde));` pour régler la date et l'heure initiales.
-   - Commentez ou supprimez cette ligne de code après avoir réglé la date et l'heure pour éviter de les réinitialiser à chaque redémarrage.
-   - Si vous devez ajuster la date et l'heure ultérieurement, vous pouvez réactiver cette ligne de code et la modifier en conséquence. Assurez-vous de la désactiver à nouveau après avoir effectué les réglages nécessaires.
+4. **Preserve the date and time in the DS3231 module**:
+   - The first time you upload the code to your Arduino, it is recommended to activate the line of code `rtc.adjust(DateTime(year, month, day, hour, minute, second));` to set the initial date and time.
+   - Comment or remove this line of code after setting the date and time to prevent resetting them on each restart.
+   - If you need to adjust the date and time later, you can reactivate this line of code and modify it accordingly. Make sure to deactivate it again after making the necessary adjustments.
 
-5. **Alimentez votre Arduino** :
-   - Une fois que vous avez téléversé le code et réglé la date et l'heure initiales (si nécessaire), alimentez votre Arduino.
+5. **Power your Arduino**:
+   - Once you have uploaded the code and set the initial date and time (if necessary), power your Arduino.
 
-6. **Affichage de l'heure actuelle** :
-   - L'heure actuelle sera automatiquement affichée sur le module MAX7219 à l'aide du module RTC DS3231.
-   - Assurez-vous que le module RTC DS3231 est alimenté en permanence pour garantir que l'heure est maintenue avec précision, même après une mise hors tension de l'Arduino.
+6. **Display the current time**:
+   - The current time will be automatically displayed on the MAX7219 module using the DS3231 RTC module.
+   - Ensure that the DS3231 RTC module is powered continuously to maintain accurate time even after an Arduino power-off.
 
-N'hésitez pas à contribuer ou à signaler des problèmes !
+Feel free to contribute or report issues!
 
-## Auteur
-
+## Author
 
 - Joemy Bannwarth
 - Foxtek Technology Systems - www.foxtek.eu
 
-
-N'hésitez pas à contribuer ou à signaler des problèmes !
-
+Feel free to contribute or report issues!
