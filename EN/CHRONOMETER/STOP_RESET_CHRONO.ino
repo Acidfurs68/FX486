@@ -1,4 +1,3 @@
-```cpp
 #include <LedControl.h>
 
 LedControl lc = LedControl(10, 11, 12, 1);
@@ -77,4 +76,3 @@ void restartTimer() {
   timingStarted = true;  // Start the timer
   previousMillis = currentMillis;  // Reset the timer
 }
-```
