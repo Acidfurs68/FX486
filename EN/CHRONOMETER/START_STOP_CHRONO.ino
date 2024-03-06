@@ -1,16 +1,14 @@
 #include <LedControl.h>
 
 LedControl lc = LedControl(10, 11, 12, 1);
+const int ledPin = 13;    // Pin for the LED
+const int buzzerPin = A0; // Pin for the buzzer
 
 int resetPin = A2;
-int buzzerPin = A0;
-int ledPin = 13;
 unsigned long previousMillis = 0;
 unsigned long currentMillis = 0;
 unsigned long elapsedTime = 0;
 bool timingStarted = false;
-bool buttonState = HIGH;
-unsigned long debounceDelay = 20;
 
 void setup() {
   lc.shutdown(0, false);
@@ -19,22 +17,22 @@ void setup() {
   displayTime(0, 0, 0, 0);
 
   pinMode(resetPin, INPUT_PULLUP);
-  pinMode(buzzerPin, OUTPUT);
   pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
   currentMillis = millis();
 
-  if (digitalRead(resetPin) == LOW && buttonState == HIGH && (currentMillis - previousMillis) > debounceDelay) {
+  if (digitalRead(resetPin) == LOW) {
     // Wait for the button to be released to avoid bouncing
     delay(50);
     while (digitalRead(resetPin) == LOW); // Active waiting until the button is released
 
-    previousMillis = currentMillis; // Reset the timer
-    timingStarted = true; // Start the timer
-    // Produce a beep sound and blink the LED twice
-    beepAndBlink();
+    if (timingStarted) {
+      pauseTimer(); // Pause the timer
+    } else {
+      startTimer(); // Start the timer
+    }
   }
 
   if (timingStarted) {
@@ -45,6 +43,7 @@ void loop() {
     int milliseconds = elapsedTime % 1000 / 10;
 
     displayTime(hours, minutes, seconds, milliseconds);
+
   }
 }
 
@@ -59,13 +58,29 @@ void displayTime(int hours, int minutes, int seconds, int milliseconds) {
   lc.setDigit(0, 0, milliseconds % 10, false); // Millisecond
 }
 
-void beepAndBlink() {
-  for (int i = 0; i < 2; ++i) {
-    analogWrite(buzzerPin, 128);  // Use PWM value to produce sound
-    digitalWrite(ledPin, HIGH);  // Turn on the LED
-    delay(100);  // Maintain sound and on state for 100 ms
-    analogWrite(buzzerPin, 0);    // Stop the sound
-    digitalWrite(ledPin, LOW);   // Turn off the LED
-    delay(100);  // Maintain off state for 100 ms
+void pauseTimer() {
+  // Blink and beep twice
+  for (int i = 0; i < 2; i++) {
+    tone(buzzerPin, 1000, 100);
+    digitalWrite(ledPin, HIGH);
+    delay(100);
+    digitalWrite(ledPin, LOW);
+    delay(100);
   }
+  noTone(buzzerPin);
+  timingStarted = false; // Pause the timer
+}
+
+void startTimer() {
+  // Blink and beep once
+  for (int i = 0; i < 1; i++) {
+    tone(buzzerPin, 1000, 100);
+    digitalWrite(ledPin, HIGH);
+    delay(100);
+    digitalWrite(ledPin, LOW);
+    delay(100);
+  }
+  noTone(buzzerPin);
+  timingStarted = true; // Start the timer
+  previousMillis = currentMillis - elapsedTime; // Restart the timer from the current time
 }
