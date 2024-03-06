@@ -1,6 +1,3 @@
-Bien sûr, voici une version ajustée du README pour un projet composé de trois fichiers INO différents :
-
-```markdown
 # Chronomètre Arduino
 
 Ce projet consiste en un chronomètre simple implémenté sur une carte Arduino, avec un affichage sur un module d'affichage LED à sept segments et des fonctionnalités supplémentaires telles que la mise en pause, la réinitialisation et des indicateurs visuels et sonores.
