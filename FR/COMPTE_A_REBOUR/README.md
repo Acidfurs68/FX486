@@ -1,7 +1,5 @@
 # Minuteur à Compte à Rebours Programmable Arduino
 
-![7be9ab2a-c982-4633-9d86-b7a25706d5da](https://github.com/Acidfurs68/FX486_V1/assets/153730800/561f6355-0b7a-4577-b27d-d51a5cb9047f)
-
 Ce projet consiste en un minuteur à compte à rebours programmable basé sur la plateforme Arduino. 
 Il permet aux utilisateurs de définir une durée de compte à rebours en heures, minutes, secondes et centièmes de seconde, puis de lancer le compte à rebours. 
 Le minuteur affiche ensuite le temps restant sur un afficheur 8 chiffres à LED et émet un bip à chaque seconde de décompte.
