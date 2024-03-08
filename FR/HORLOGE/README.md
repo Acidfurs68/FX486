@@ -62,8 +62,6 @@ Connectez les composants conformément au schéma suivant :
    - L'heure actuelle sera automatiquement affichée sur le module MAX7219 à l'aide du module RTC DS3231.
    - Assurez-vous que le module RTC DS3231 est alimenté en permanence pour garantir que l'heure est maintenue avec précision, même après une mise hors tension de l'Arduino.
 
-N'hésitez pas à contribuer ou à signaler des problèmes !
-
 ## Auteur
 
 
