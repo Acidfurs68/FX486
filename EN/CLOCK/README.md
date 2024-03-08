@@ -62,8 +62,6 @@ Connect the components according to the following diagram:
    - The current time will be automatically displayed on the MAX7219 module using the DS3231 RTC module.
    - Ensure that the DS3231 RTC module is powered continuously to maintain accurate time even after an Arduino power-off.
 
-Feel free to contribute or report issues!
-
 ## Author
 
 - Joemy Bannwarth
