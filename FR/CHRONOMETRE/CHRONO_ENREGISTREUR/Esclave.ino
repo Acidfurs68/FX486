@@ -2,7 +2,7 @@
 #include <SPI.h>
 #include <SD.h>
 
-int tourCount = 0; // Variable globale pour suivre le nombre de tours
+int tourCount = 0; // Variable globale pour suivre le nombre de mesures
 
 void setup() {
   Wire.begin(0x08); // Adresse de ce Nano en tant qu'esclave I2C
