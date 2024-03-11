@@ -38,9 +38,9 @@ void writeToSD(const String& data) {
     int result = Wire.endTransmission();
 
     if (result == 0) {
-        Serial.println("Données écrites sur la SD : " + data);
+        Serial.println("Transfert sur SD : " + data);
     } else {
-        Serial.println("Erreur d'écriture sur la SD");
+        Serial.println("Erreur d'écriture sur SD");
     }
 }
 
