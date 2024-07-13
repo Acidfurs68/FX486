@@ -25,15 +25,15 @@ Ce projet utilise un module Arduino pour construire une horloge qui se synchroni
 #### Afficheur MAX7219 :
 - `VCC` -> `5V` de l'Arduino
 - `GND` -> `GND` de l'Arduino
-- `DIN` -> `Pin D3` de l'Arduino
-- `CS`  -> `Pin D2` de l'Arduino
-- `CLK` -> `Pin D4` de l'Arduino
+- `DIN` -> `Pin D10` de l'Arduino
+- `CS`  -> `Pin D11` de l'Arduino
+- `CLK` -> `Pin D12` de l'Arduino
 
 #### Module GPS NEO-6M :
 - `VCC` -> `5V` de l'Arduino
 - `GND` -> `GND` de l'Arduino
-- `TX`  -> `Pin D5` de l'Arduino (connecté au RX de l'Arduino)
-- `RX`  -> `Pin D6` de l'Arduino (connecté au TX de l'Arduino)
+- `TX`  -> `Pin D1` de l'Arduino (connecté au RX de l'Arduino)
+- `RX`  -> `Pin D0` de l'Arduino (connecté au TX de l'Arduino)
 
 #### Module RTC DS3231 :
 - `VCC` -> `5V` de l'Arduino
