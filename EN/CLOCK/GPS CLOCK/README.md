@@ -76,7 +76,3 @@ Contributions to this project are welcome. To contribute, please clone this repo
 - Foxtek Technology Systems - www.foxtek.eu
 
 Feel free to contribute or report issues!
-
----
-
-This README is designed to be both comprehensive and informative, providing all the necessary information to use or contribute to the project. You can place this file at the root of your GitHub repository.
