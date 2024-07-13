@@ -13,8 +13,6 @@ reproductions ou modifications sont soumises aux lois relatives aux brevets et �
 ## Caractéristiques
 - Affichage à 8 chiffres pour heures, minutes, secondes et millisecondes
 - Programmable via un clavier numérique 4x4
-- Contrôle à distance via une télécommande 433MHz
-- Batterie au lithium-ion rechargeable via USB-C
 - Connectique 12 broches pour l'ajout de modules externes
 - Code open-source, permettant une personnalisation complète
 
