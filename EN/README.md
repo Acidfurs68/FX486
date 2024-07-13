@@ -12,8 +12,6 @@ This project is protected by a provisional patent. All uses, reproductions, or m
 ## Features
 - 8-digit display for hours, minutes, seconds, and milliseconds
 - Programmable via a 4x4 numeric keypad
-- Remote control via a 433MHz remote
-- Rechargeable lithium-ion battery via USB-C
 - 12-pin connector for adding external modules
 - Open-source code, allowing complete customization
 
